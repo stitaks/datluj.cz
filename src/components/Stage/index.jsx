@@ -3,11 +3,11 @@ import Wordbox from '../Wordbox';
 import './style.css';
 
 const Stage = () => {
-  const [word, setWord] = useState('jahoda');
+  const [words, setWords] = useState(['jahoda']);
 
   return (
     <div className="stage">
-      <Wordbox word={word} />
+      {words.map((word) => <Wordbox word={word} key={word} />)}
     </div>
   );
 };

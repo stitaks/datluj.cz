@@ -1,7 +1,12 @@
 .stage {
   position: relative;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
   height: 384px;
+  padding: 16px;
+  margin: 32px auto;
   background-color: #efefef;
   border-radius: 8px;
-  margin: 2rem auto;
 }
