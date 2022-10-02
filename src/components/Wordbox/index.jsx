@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './style.css';
 
-const Wordbox = ({ word, }) => {
+const Wordbox = ({ word }) => {
   const [lettersLeft, setLettersLeft] = useState(word);  
   
   return (
