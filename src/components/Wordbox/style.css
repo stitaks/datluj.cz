@@ -13,7 +13,7 @@
   z-index: 1;
 }
 
-.wordbox--alert {
+.wordbox--mistake {
   background-color: #e64747;
   color: white;
 }
