@@ -13,3 +13,7 @@
   z-index: 1;
 }
 
+.wordbox--alert {
+  background-color: #e64747;
+  color: white;
+}
