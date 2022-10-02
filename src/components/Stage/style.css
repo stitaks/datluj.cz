@@ -1,12 +1,19 @@
 .stage {
-  position: relative;
+  height: 340px;
+  padding: 32px;
+  margin: 32px auto;
+  background-color: #efefef;
+  border-radius: 8px;
+}
+
+.stage__mistakes {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.stage__words {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   align-items: center;
-  height: 384px;
-  padding: 16px;
-  margin: 32px auto;
-  background-color: #efefef;
-  border-radius: 8px;
 }

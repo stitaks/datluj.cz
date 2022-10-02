@@ -7,7 +7,10 @@ const Stage = () => {
 
   return (
     <div className="stage">
-      {words.map((word) => <Wordbox word={word} key={word} />)}
+      <div className="stage__mistakes">Chyb: 0</div>
+      <div className="stage__words">
+        {words.map((word) => <Wordbox word={word} key={word} />)}
+      </div>
     </div>
   );
 };
