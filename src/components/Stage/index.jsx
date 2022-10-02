@@ -3,15 +3,11 @@ import Wordbox from '../Wordbox';
 import './style.css';
 
 const Stage = () => {
-  const [word, setWord] = useState('JAHODA');
-  
-  const handleDone = () => {
-    setWord(null);
-  };
+  const [word, setWord] = useState('jahoda');
 
   return (
     <div className="stage">
-      {word === null ? null : <Wordbox word={word} onDone={handleDone} />}
+      <Wordbox word={word} />
     </div>
   );
 };
