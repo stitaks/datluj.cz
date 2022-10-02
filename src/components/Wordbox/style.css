@@ -1,8 +1,8 @@
 .wordbox {
   display: inline-block;
   position: relative;
-  padding: 16px 24px;
-  margin: 16px;
+  padding: 16px;
+  margin: 4px;
   background-color: #8fb935;
   font-weight: bold;
   text-align: center;

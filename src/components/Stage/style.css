@@ -1,7 +1,7 @@
 .stage {
   position: relative;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   flex-wrap: wrap;
   align-items: center;
   height: 384px;
