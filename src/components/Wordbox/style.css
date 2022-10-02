@@ -1,0 +1,14 @@
+.wordbox {
+  display: inline-block;
+  position: relative;
+  padding: 16px 24px;
+  background-color: #00539C;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  font-size: 16px;
+  line-height: 16px;
+  border-radius: 8px;
+  z-index: 1;
+}
+

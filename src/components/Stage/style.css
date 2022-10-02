@@ -1,0 +1,7 @@
+.stage {
+  position: relative;
+  height: 384px;
+  background-color: #efefef;
+  border-radius: 8px;
+  margin: 2rem auto;
+}
