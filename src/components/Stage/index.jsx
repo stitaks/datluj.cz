@@ -2,6 +2,20 @@ import React, { useState } from 'react';
 import Wordbox from '../Wordbox';
 import './style.css';
 
+const generateWord = (size) => {
+  const sizeIndex = size === undefined
+    ? Math.floor(Math.random() * wordList.length)
+    : size - 3;
+  
+  if (sizeIndex < 0 || sizeIndex >= wordList.length) {
+    return null;
+  }
+  
+  const words = wordList[sizeIndex];
+  const wordIndex = Math.floor(Math.random() * words.length);
+  return words[wordIndex];
+};
+
 const Stage = () => {
   const [words, setWords] = useState(['jahoda']);
 
