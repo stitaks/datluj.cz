@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Wordbox from '../Wordbox';
+import wordList from '../../word-list';
 import './style.css';
 
 const generateWord = (size) => {
