@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Wordbox from '../Wordbox';
 import wordList from '../../word-list';
 import './style.css';
 
-const generateWord = (size) => {
+// TODO: temporary disable function - remove next line when you start using it
+/* eslint @typescript-eslint/no-unused-vars: "off" */
+const generateWord = (size: number) => {
   const sizeIndex = size === undefined
     ? Math.floor(Math.random() * wordList.length)
     : size - 3;
@@ -18,7 +20,7 @@ const generateWord = (size) => {
 };
 
 const Stage = () => {
-  const [words, setWords] = useState(['jahoda']);
+  const [words] = useState<string[]>(['jahoda']);
 
   return (
     <div className="stage">

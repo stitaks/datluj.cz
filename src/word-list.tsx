@@ -12669,4 +12669,4 @@ export default [
     'termoelektrotechnika',
     'tradeskancionalistka',
   ],
-];
+] as string[][];
