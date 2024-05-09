@@ -4,7 +4,7 @@ import wordList from '../../word-list';
 import './style.css';
 
 // TODO: temporary disable function - remove next line when you start using it
-/* eslint @typescript-eslint/no-unused-vars: "off" */
+/* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 const generateWord = (size: number) => {
   const sizeIndex = size === undefined
     ? Math.floor(Math.random() * wordList.length)
