@@ -1,15 +1,41 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './style.css';
 
 interface IWordboxProp {
   word: string;
+  onFinish: any;
+  active: boolean;
 }
 
-const Wordbox : React.FC<IWordboxProp> = ({ word }) => {
-  const [lettersLeft] = useState<string>(word);  
+const Wordbox : React.FC<IWordboxProp> = ({ word, onFinish, active}) => {
+  const [lettersLeft, setLetterLeft] = useState<string>(word);  
+  const [mistake, setMistake] = useState<boolean>(false);
+
+  const handleKeyUp = (e: any) => {
+  
+    if (e.key === lettersLeft[0]){
+      if (lettersLeft.length === 1){
+        return onFinish();
+      }
+
+      return setLetterLeft(lettersLeft.substring(1, lettersLeft.length)), setMistake(false);
+    }
+    else {
+      return setMistake(true);
+    }
+    
+  }
+
+  useEffect(() => {
+    if(active){
+      document.addEventListener('keyup', handleKeyUp);
+      return () => document.removeEventListener('keyup', handleKeyUp);
+    }
+    
+  }, [lettersLeft, active])
   
   return (
-    <div className="wordbox">{lettersLeft}</div>
+    <div className={mistake?"wordbox wordbox--mistake" : "wordbox"}>{lettersLeft}</div>
   );
 };
 
