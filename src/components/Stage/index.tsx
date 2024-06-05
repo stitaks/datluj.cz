@@ -23,22 +23,23 @@ const generateWord = (size: number) => {
 
 const Stage = () => {
 
-  const startWord = () => {
+  const startWord = () : string[] => {
     const words: Array<string> = [];
     for (let i = 0; i<3; i++){
       const word = generateWord(6);
       if(typeof word === 'string'){ 
-        return setWord([...words, word]);
+        words.push(word);
       }
     }
-    return setWord(words);
+    return (words);
   }
   
-  const [words, setWord] = useState<string[]>([startWord()]);
+  const [words, setWord] = useState<string[]>(startWord());
 
   const handleFinish = () => {
     const word = generateWord(6);
     if (typeof word === 'string'){
+      words.shift()
       return setWord([...words, word]);
     }
     return setWord(['']);
@@ -48,7 +49,7 @@ const Stage = () => {
     <div className="stage">
       <div className="stage__mistakes">Chyb: 0</div>
       <div className="stage__words">
-        {words.map((word) => <Wordbox word={word} key={word} onFinish={handleFinish} active={true}/>)}
+        {words.map((word) => <Wordbox word={word} key={word} onFinish={handleFinish} active={word === words[0]?true : false}/>)}
       </div>
     </div>
   );
