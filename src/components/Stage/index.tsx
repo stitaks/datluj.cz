@@ -22,10 +22,10 @@ const generateWord = (size: number) => {
 
 
 const Stage = () => {
-  const [mistakes, useMistakes] = useState <number>(0);
+  const [mistakes, setMistakes] = useState <number>(0);
 
-  const onMistakes = () => {
-    useMistakes(mistakes + 1);
+  const handleMistakes = () => {
+    setMistakes(mistakes + 1);
   }
 
   const startWord = () : string[] => {
@@ -54,7 +54,7 @@ const Stage = () => {
     <div className="stage">
       <div className="stage__mistakes">Chyb: {mistakes}</div>
       <div className="stage__words">
-        {words.map((word) => <Wordbox word={word} key={word} onFinish={handleFinish} active={word === words[0]?true : false} onMistakes={onMistakes}/>)}
+        {words.map((word) => <Wordbox word={word} key={word} onFinish={handleFinish} active={word === words[0]?true : false} onMistakes={handleMistakes}/>)}
       </div>
     </div>
   );

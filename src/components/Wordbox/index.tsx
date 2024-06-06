@@ -3,16 +3,16 @@ import './style.css';
 
 interface IWordboxProp {
   word: string;
-  onFinish: any;
+  onFinish: () => void;
   active: boolean;
-  onMistakes: any;
+  onMistakes: () => void;
 }
 
 const Wordbox : React.FC<IWordboxProp> = ({ word, onFinish, active, onMistakes}) => {
   const [lettersLeft, setLetterLeft] = useState<string>(word);  
   const [mistake, setMistake] = useState<boolean>(false);
 
-  const handleKeyUp = (e: any) => {
+  const handleKeyUp = (e: KeyboardEvent) => {
   
     if (e.key === lettersLeft[0]){
       if (lettersLeft.length === 1){
